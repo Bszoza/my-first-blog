@@ -5,19 +5,16 @@
 </head>
 <body>
     <header>
-        <h1><a href="/"> Casper's' blog</a></h1>
+        <h1><a href="/">Kacper's Blog</a></h1>
     </header>
 
+    {% for post in posts %}
     <article>
-        <time>published: 16.04.2024, 23:27</time>
-        <h2><a href="">My first post</a></h2>
-        <p>Siema</p>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </article>
+    {% endfor %}
 
-    <article>
-        <time>published: 16.04.2024, 23:30</time>
-        <h2><a href="">My second post</a></h2>
-        <p>Siema 2</p>
-    </article>
 </body>
 </html>
